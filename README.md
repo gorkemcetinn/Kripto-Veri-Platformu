@@ -144,6 +144,10 @@ https://github.com/user-attachments/assets/3f3d9794-e163-46de-8df6-d4db57136dda
 
 <img width="1913" height="861" alt="Ekran görüntüsü 2025-11-17 145659" src="https://github.com/user-attachments/assets/95d97b92-a5e2-456f-a152-77ab6f164f5e" />
 
+*Akış Şeması*
+
+<img width="782" height="281" alt="Ekran görüntüsü 2025-11-17 162202" src="https://github.com/user-attachments/assets/fae1aaf6-fdc5-477b-9b0c-877c85a21bc5" />
+
 
 ---
 
