@@ -1,18 +1,27 @@
-# Node.js Kütüphane Klasörü (EN ÖNEMLİSİ)
-# Bu, 150MB+ olan binlerce küçük dosyayı yüklemeyi engeller
-node_modules/
-/node_modules
+# Python Sanal Ortamı
+venv/
+/venv/
+*.venv
+.venv/
 
-# Log dosyaları
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
+# Python Cache Dosyaları
+__pycache__/
+*.py[cod]
 
-# Build çıktıları
-dist
-.next/
+# IDE ve OS Dosyaları
+.vscode/
+.idea/
+*.DS_Store
+*.suo
+*.user
+
+# Docker Veri Klasörü (ÇOK ÖNEMLİ)
+# Bu, veritabanımızın tamamını GitHub'a yüklememizi engeller
+postgres-data/
+
+# Eğitilmiş ML Model Dosyaları
+*.joblib
+*.pkl
 
 # (Gelecekteki Sırlarımız için)
 .env
-.env.local
