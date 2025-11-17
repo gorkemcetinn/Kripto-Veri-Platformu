@@ -1,0 +1,207 @@
+/* Sade, Profesyonel ve SIKIŞTIRILMIŞ Dark Mode CSS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #111827;
+  --bg-secondary: #1F2937;
+  --border-color: #374151;
+  --text-primary: #F9FAFB;
+  --text-secondary: #9CA3AF;
+  --accent-blue: #3B82F6;
+  --accent-green: #10B981;
+  --accent-red: #EF4444;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Sıkıştırılmış Container */
+.container {
+  max-width: 100%; /* Sınır kaldırıldı */
+  width: 100vw; /* Viewport'un tamamı */
+  padding: 2rem 2rem; /* Sadece minimal padding */
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Sıkıştırılmış Header */
+header {
+  text-align: center;
+  margin-bottom: 1.5rem; /* 2rem'den 1.5rem'e düşürüldü */
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem; /* 1.5rem'den 1rem'e düşürüldü */
+}
+header h1 {
+  color: var(--text-primary);
+  font-size: 1.8rem; /* 2rem'den 1.8rem'e düşürüldü */
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+header p {
+  color: var(--text-secondary);
+  font-size: 0.9rem; /* 1rem'den 0.9rem'e düşürüldü */
+}
+
+.live-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* Sıkıştırılmış Select Container */
+.select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem; /* 2rem'den 1.5rem'e düşürüldü */
+  gap: 1rem;
+}
+.select-container label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.select-container select {
+  appearance: none;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.6rem 2rem 0.6rem 0.8rem; /* 0.75rem'den 0.6rem'e düşürüldü */
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 220px;
+  transition: border-color 0.2s;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%239CA3AF'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  background-size: 0.9rem;
+}
+.select-container select:hover { border-color: var(--accent-blue); }
+.select-container select:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+.select-container select option {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Sıkıştırılmış Coin Başlığı */
+.coin-header {
+  text-align: center;
+  font-size: 2.2rem; /* 2.5rem'den 2.2rem'e düşürüldü */
+  font-weight: 700;
+  margin-bottom: 1rem; /* 1.5rem'den 1rem'e düşürüldü */
+  color: var(--text-primary);
+}
+
+/* Metrik Kartları (Boşluk sorunu DÜZELTİLDİ) */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 eşit sütun */
+  gap: 1.25rem; /* 1.5rem'den 1.25rem'e düşürüldü */
+  margin-bottom: 2rem; /* 3rem'den 2rem'e düşürüldü */
+}
+.metric-card {
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 1.25rem; /* 1.5rem'den 1.25rem'e düşürüldü */
+  border: 1px solid var(--border-color);
+}
+.metric-card h4 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+.metric-card h2 {
+  font-size: 2rem; /* 2.25rem'den 2rem'e düşürüldü */
+  font-weight: 700;
+  line-height: 1;
+}
+.metric-card.positive h2 { color: var(--accent-green); }
+.metric-card.negative h2 { color: var(--accent-red); }
+.metric-card.neutral h2 { color: var(--text-secondary); }
+
+/* Grafik */
+.chart-header {
+  text-align: center;
+  font-size: 1.25rem; /* 1.5rem'den 1.25rem'e düşürüldü */
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 1rem; /* 1.5rem'den 1rem'e düşürüldü */
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem; /* 2.5rem'den 1.5rem'e düşürüldü */
+}
+.chart-container {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem; /* 2rem'den 1.5rem'e düşürüldü */
+  padding-right: 2rem;
+}
+
+/* Hata ve Yüklenme */
+.error-box, .loading {
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+.loading-spinner {
+  margin: 0 auto 1rem;
+  width: 32px;
+  height: 32px;
+  border: 4px solid var(--border-color);
+  border-top: 4px solid var(--accent-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.loading p { font-size: 1.1rem; color: var(--text-secondary); }
+.error-box {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--accent-red);
+  color: #FCA5A5;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* Tooltip */
+.recharts-default-tooltip {
+  background: var(--bg-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+}
+.recharts-tooltip-label { color: var(--text-primary) !important; font-weight: 600 !important; }
+.recharts-tooltip-item { color: var(--text-secondary) !important; }
+
+/* Responsive Tasarım */
+@media (max-width: 900px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .container { padding: 1rem; }
+  header h1 { font-size: 1.5rem; }
+  .coin-header { font-size: 1.8rem; }
+  .metric-card h2 { font-size: 2rem; }
+  .chart-container { padding: 1rem; }
+}
