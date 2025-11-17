@@ -4,11 +4,9 @@ Bu proje, **Apache Kafka**, **Apache Spark**, **PostgreSQL**, **FastAPI** ve **R
 
 Platform, CoinGecko API'sinden 10 saniyede bir 25'ten fazla coinin verisini çeker, bir Kafka hattı üzerinden Spark Structured Streaming ile işler, PostgreSQL'de depolanır, FastAPI ile bir analiz API'si olarak sunulur ve React tabanlı bir WebSocket dashboard'unda canlı olarak görselleştirilir.
 
-
-
 ---
 
-## 🏗️ Mimari Şeması
+## Mimari Şeması
 
 Bu proje, modern veri mühendisliği araçlarını bir araya getiren "ayrık" (decoupled) bir mimari kullanır:
 
@@ -23,7 +21,7 @@ Bu proje, modern veri mühendisliği araçlarını bir araya getiren "ayrık" (d
 
 ---
 
-## 🛠️ Kullanılan Teknolojiler (Tech Stack)
+## Kullanılan Teknolojiler (Tech Stack)
 
 ### Backend (`Crypto_analiz` klasörü)
 * **Akış:** Apache Kafka, Apache Spark (Structured Streaming)
@@ -40,28 +38,26 @@ Bu proje, modern veri mühendisliği araçlarını bir araya getiren "ayrık" (d
 
 ---
 
-## 🔒 Kurulum: Güvenlik ve Yapılandırma (İlk Çalıştırma)
+## Kurulum: Güvenlik ve Yapılandırma (İlk Çalıştırma)
 
-Bu projeyi çalıştırmadan önce, şifreler ve portlar gibi "sırların" ayarlanması gerekir.
+Bu projeyi çalıştırmadan önce, şifreler ve portların ayarlanması gerekir.
 
-### 1. Backend Sırları (`.env` Dosyası)
+### 1. Backend (`.env` Dosyası)
 
-`Crypto_analiz` (ana) klasörünün içine **`.env`** adında yeni bir dosya oluşturun ve içine aşağıdakileri yapıştırın. (Bu dosya `.gitignore` içindedir, GitHub'a gitmez.)
+`Crypto_analiz` (ana) klasörünün içine **`.env`** adında yeni bir dosya oluşturun ve içine aşağıdakileri yapıştırın.
 
 ```env
-# --- PostgreSQL Veritabanı Sırları ---
 POSTGRES_USER=gorkem
 POSTGRES_PASSWORD=pass123
 POSTGRES_DB=crypto_db
 POSTGRES_PORT=5433
 ```
 
-### 2. Frontend Sırları (`.env.local` Dosyası)
+### 2. Frontend (`.env.local` Dosyası)
 
 `crypto-dashboard` klasörünün içine **`.env.local`** adında yeni bir dosya oluşturun ve içine aşağıdakileri yapıştırın:
 
 ```env
-# React (Vite) sırları 'VITE_' önekiyle başlamalıdır
 VITE_API_BASE_URL=[http://127.0.0.1:8000](http://127.0.0.1:8000)
 ```
 
@@ -69,14 +65,14 @@ VITE_API_BASE_URL=[http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 ## 🚀 Projeyi Çalıştırma Adımları
 
-Tüm sır dosyaları (`.env` ve `.env.local`) ayarlandıktan sonra, projeyi ayağa kaldırmak için **5 adet terminale** ihtiyacınız olacak.
+Tüm dosyaları (`.env` ve `.env.local`) ayarlandıktan sonra, projeyi ayağa kaldırmak için **5 adet terminale** ihtiyacınız olacak.
 
 ### 1. Servisler: Docker (Kafka & Postgres)
 
 Tüm altyapıyı (Kafka, Zookeeper ve PostgreSQL) `docker-compose.yml` dosyasını kullanarak başlatın:
 
+Crypto_analiz klasöründe
 ```bash
-# Crypto_analiz klasöründe
 docker-compose up -d
 ```
 
