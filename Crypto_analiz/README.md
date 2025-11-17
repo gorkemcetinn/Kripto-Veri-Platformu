@@ -1,6 +1,6 @@
 # 💸 Kripto Veri Platformu (Uçtan Uca Veri Mühendisliği Projesi)
 
-Bu proje, **Apache Kafka**, **Apache Spark**, **PostgreSQL**, **FastAPI** ve **React** kullanarak oluşturulmuş, uçtan uca (end-to-end), gerçek zamanlı (real-time) bir kripto para veri analizi platformudur.
+Bu proje, **Apache Kafka**, **Apache Spark**, **PostgreSQL**, **FastAPI** ve **React** kullanarak oluşturulmuş, end-to-end, gerçek zamanlı bir kripto para veri analizi platformudur.
 
 Platform, CoinGecko API'sinden 10 saniyede bir 25'ten fazla coinin verisini çeker, bir Kafka hattı üzerinden Spark Structured Streaming ile işler, PostgreSQL'de depolanır, FastAPI ile bir analiz API'si olarak sunulur ve React tabanlı bir WebSocket dashboard'unda canlı olarak görselleştirilir.
 
@@ -15,8 +15,8 @@ Bu proje, modern veri mühendisliği araçlarını bir araya getiren "ayrık" (d
 
 
 1.  **Producer (Python):** `data_collector.py` 10 saniyede bir 25 coinin fiyatını çeker ve Kafka'ya gönderir.
-2.  **Kafka (Docker):** Mesajları `crypto_prices` konusunda (topic) tutar.
-3.  **Processor (Spark):** `stream_processor.py` bu konuyu dinler, veriyi zaman damgasıyla zenginleştirir ve `price_history` tablosuna yazar.
+2.  **Kafka (Docker):** Mesajları `crypto_prices`  topic tutar.
+3.  **Processor (Spark):** `stream_processor.py` bu topic dinlenir, veriyi zaman damgasıyla zenginleştirir ve `price_history` tablosuna yazar.
 4.  **Database (Postgres):** `price_history` tablosunda tüm zaman serisi (time-series) verisini kalıcı olarak saklar.
 5.  **API (FastAPI):** `api_server.py` bu veritabanına bağlanır, 1s/24s/7g analizlerini hesaplar ve hem REST (`/analysis/`) hem de WebSocket (`/ws/analysis/`) olarak sunar.
 6.  **Frontend (React):** `crypto-dashboard` bu WebSocket'e bağlanarak veriyi canlı bir grafikte ve metrik kartlarında gösterir.
@@ -134,6 +134,19 @@ npm install
 npm run dev
 ```
 *React sunucunuz `http://localhost:5173` (veya benzeri) bir adreste otomatik olarak açılacaktır.*
+
+---
+
+### 5. Ekran Görüntüleri 
+
+
+*Kafka ve Spark terminal görüntüleri.*
+
+https://github.com/user-attachments/assets/3f3d9794-e163-46de-8df6-d4db57136dda
+
+*Kullanıcı Dashboard'ı ekran görüntüsü*
+<img width="1913" height="861" alt="Ekran görüntüsü 2025-11-17 145659" src="https://github.com/user-attachments/assets/95d97b92-a5e2-456f-a152-77ab6f164f5e" />
+
 
 ---
 
