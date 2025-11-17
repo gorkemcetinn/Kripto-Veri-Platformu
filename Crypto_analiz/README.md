@@ -133,7 +133,7 @@ npm run dev
 
 ---
 
-### 5. Ekran Görüntüleri 
+## Ekran Görüntüleri 
 
 
 *Kafka ve Spark terminal görüntüleri.*
